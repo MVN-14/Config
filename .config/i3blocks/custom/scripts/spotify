@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+
+FOREGROUND="#769ff0"
+
+# if spotify isnt playing
+if [[ -z "$(playerctl --player=spotify status)" ]]; then
+  if [ "$BLOCK_BUTTON" == "1" ]; then
+    setsid -f spotify-launcher
+  else
+    FULL_TEXT=
+    SHORT_TEXT=
+  fi
+else
+  ARTIST=$(playerctl --player=spotify metadata artist)
+  TITLE=$(playerctl --player=spotify metadata title)
+  
+  # Escaping ampersands isnt working correctly so replacing them with nerd font icons for now
+  FULL_TEXT=$(echo " ${ARTIST/&/󰪍} - ${TITLE/&/󰪍}") 
+  if [ ${#FULL_TEXT} -gt "60" ]; then     
+    FULL_TEXT=$(echo "$FULL_TEXT" | cut -c -50)...
+  fi
+
+  SHORT_TEXT=$TITLE
+fi
+
+echo $FULL_TEXT
+echo $SHORT_TEXT 
+echo $FOREGROUND
+

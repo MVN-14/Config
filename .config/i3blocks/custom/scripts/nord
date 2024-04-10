@@ -1,0 +1,27 @@
+#!/bin/bash
+
+FULL_TEXT=""
+SHORT_TEXT=""
+
+if nordvpn status | grep -q "Connected"; then
+    if [ "$BLOCK_BUTTON" -eq "1" ]; then
+        nordvpn disconnect > /dev/null
+        FULL_TEXT="Disconnecting..."
+        FOREGROUND="#FFFF00"
+    else
+        FOREGROUND="#769ff0"
+    fi
+else
+    if [ "$BLOCK_BUTTON" -eq "1" ]; then
+        nordvpn connect > /dev/null
+        FULL_TEXT="Connecting..."
+        FOREGROUND="#FFFF00"
+    else
+        FOREGROUND="#FF0000"
+    fi
+fi
+
+echo $FULL_TEXT
+echo $SHORT_TEXT
+echo $FOREGROUND
+

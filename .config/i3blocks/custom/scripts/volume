@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+FULL_TEXT=" $(pamixer --get-volume)%"
+
+echo $FULL_TEXT
+echo $FULL_TEXT

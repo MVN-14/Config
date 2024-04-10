@@ -1,0 +1,32 @@
+command=~/.config/i3blocks/custom/scripts/$BLOCK_NAME
+separator_block_width=25
+separator=true
+align=center
+markup=pango
+color=#769ff0
+
+
+[nord]
+interval=5
+
+[spotify]
+interval=5
+signal=11
+
+[volume]
+label=󰕾 
+interval=once
+signal=11
+
+[date]
+command=date +"%A, %B %d"
+interval=5
+
+#[time]
+#command=date +"%_I:%M %p "
+#interval=5
+
+[test]
+command=/home/mvn/Dev/go/i3blocks/time/time
+interval=1
+
