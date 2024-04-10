@@ -1,0 +1,16 @@
+/*
+
+!.gitignore
+
+!.bashrc
+!.screenlayout/
+!.xinitrc
+
+!.config/alacritty/
+!.config/i3/
+!.config/i3blocks/
+!.config/nvim/
+!.config/.picom.conf
+!.config/starship.toml
+
+
