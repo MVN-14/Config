@@ -1,17 +1,16 @@
 return require("packer").startup(function(use)
+  -- local
+  use {
+    "/home/mvn/projects/gotools-nvim",
+    config = function()
+      require("gotools-nvim").setup()
+    end
+  }
+
   use "wbthomason/packer.nvim"
 
-  -- my plugins
-  --  use "MVN-14/nvim-todo"
-  use "/home/mvn/Dev/nvim/plugins/nvim-todo"
-  use "/home/mvn/Dev/nvim/plugins/nvim-commenter"
-  use "/home/mvn/Dev/nvim/plugins/nvim-completion"
-  use "/home/mvn/Dev/nvim/plugins/nvim-cjump"
-
-  -- fixing ouroboros
-  --  use "/home/mvn/Dev/nvim/ouroboros.nvim"
-
   use "nvim-lualine/lualine.nvim"
+
   use "folke/tokyonight.nvim"
   use {
     "folke/trouble.nvim",
@@ -21,7 +20,6 @@ return require("packer").startup(function(use)
   -- file navigation
   use "theprimeagen/harpoon"
   use "nvim-tree/nvim-tree.lua"
-  --use "jakemason/ouroboros"
 
   use "tpope/vim-fugitive"
 

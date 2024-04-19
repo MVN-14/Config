@@ -2,8 +2,7 @@ import = ["~/.config/allacritty/tokyonight_night.toml"]
 
 [font.normal]
 family = "HackNerdFont"
-style="Regular"
+style = "Regular"
 
 [window]
-opacity = 0.8
-
+opacity = 0.9
