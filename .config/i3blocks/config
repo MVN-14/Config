@@ -1,32 +1,23 @@
-command=~/.config/i3blocks/custom/scripts/$BLOCK_NAME
-separator_block_width=25
-separator=true
-align=center
+command="/home/mvn/projects/i3blocks/$BLOCK_NAME/$BLOCK_NAME"
 markup=pango
-color=#769ff0
+separator=false
+foreground=#769ff0
+background=#1f1f1f
+separator_block_width=0
+color=#FFFFFF
 
-
-[nord]
-interval=5
-
-[spotify]
-interval=5
-signal=11
-
-[volume]
-label=󰕾 
-interval=once
-signal=11
-
-[date]
-command=date +"%A, %B %d"
-interval=5
-
-#[time]
-#command=date +"%_I:%M %p "
-#interval=5
-
-[test]
-command=/home/mvn/Dev/go/i3blocks/time/time
+[i3battery]
 interval=1
+idx=1
 
+[i3volume]
+interval=1
+idx=2
+
+[i3date]
+interval=1
+idx=3
+
+[i3time]
+interval=1
+idx=4
