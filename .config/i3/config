@@ -3,7 +3,7 @@ set $mod Mod4
 font pango:Hack 12
 
 exec --no-startup-id picom --config /home/mvn/.config/.picom.conf
-exec --no-startup-id feh --bg-scale /home/mvn/Photos/Wallpaper/DinosaurJr-Farm.jpg
+exec --no-startup-id /home/mvn/scripts/wallpaper.sh
 exec --no-startup-id /home/mvn/.screenlayout/default.sh
 
 # Start XDG autostart .desktop files using dex. See also
@@ -92,17 +92,15 @@ bindsym $mod+Shift+Ctrl+Right move workspace to output right
 
 bar {
   font pango:JetBrainsMono Nerd Font 12
-  status_command i3blocks
+  status_command i3blocks 
   position top
   padding 0
 
   colors {
-    background #1f1f1f  
+    background #000000 
     focused_workspace #769ff0 #769ff0 #1f1f1f
   }
 }
-
-bindsym $mod+Shift+s exec --nostartup-id gnome-screenshot --interactive
 
 # os #
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -133,11 +131,17 @@ bindsym $mod+Ctrl+Left resize shrink width 10 px or 10 ppt
 bindsym $mod+Ctrl+Right resize grow width 10 px or 10 ppt
 
 # dmenu #
-bindsym $mod+Ctrl+c exec --no-startup-id dmenu-edit-config
-bindsym $mod+Ctrl+o exec --no-startup-id dmenu-soad
-bindsym $mod+Ctrl+d exec --no-startup-id dmenu-dev
+#bindsym $mod+Ctrl+c exec --no-startup-id dmenu-edit-config
+#bindsym $mod+Ctrl+o exec --no-startup-id dmenu-soad
+#bindsym $mod+Ctrl+d exec --no-startup-id dmenu-dev
 
 # jack #
 for_window [class="jack"] floating enable; 
 for_window [class="jack"] resize set 450 150;
 for_window [Title="Graph"] floating disable; 
+
+# Pulse Audio Volume Control
+for_window [class="Pavucontrol"] floating enable, resize set 500 500, move position center;
+
+# Brightness
+for_window [class="brightnessui"] floating enable, move position center;
