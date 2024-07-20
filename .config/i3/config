@@ -121,7 +121,7 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a00
 client.unfocused        #333333 #1f1f1f #888888 #292d2e   #22222200
 
 # launch #
-bindsym $mod+f exec --no-startup-id firefox
+bindsym $mod+b exec --no-startup-id xdg-open https://
 bindsym $mod+t exec --no-startup-id thunderbird
 
 # resizing #
