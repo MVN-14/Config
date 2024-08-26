@@ -11,10 +11,11 @@ exec --no-startup-id /home/mvn/.screenlayout/default.sh
 exec --no-startup-id dex --autostart --environment i3
 
 #Use pactl to adjust volume in PulseAudio.
-
-set $refresh_i3blocks pkill -SIGRTMIN+11 i3blocks
+set $refresh_i3blocks pkill -SIGRTMIN+11 i3blocks 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
+bindsym $mod+0 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3blocks
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
+bindsym $mod+9 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3blocks
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3blocks
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3blocks
 
@@ -121,9 +122,8 @@ client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a00
 client.unfocused        #333333 #1f1f1f #888888 #292d2e   #22222200
 
 # launch #
-bindsym $mod+b exec --no-startup-id xdg-open https://
-bindsym $mod+t exec --no-startup-id thunderbird
-
+bindsym $mod+b exec --no-startup-id notify-send "Opening browser" && xdg-open https:// 
+bindsym $mod+t exec --no-startup-id notify-send "Opening email client" && thunderbird 
 # resizing #
 bindsym $mod+Ctrl+Down resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+Up resize grow height 10 px or 10 ppt
