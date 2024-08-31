@@ -20,7 +20,7 @@ require("lazy").setup({
   spec = {
     "folke/tokyonight.nvim",
     "nvim-lualine/lualine.nvim",
-    "nvim-treesitter/playground",
+    --   "nvim-treesitter/playground",
     "tpope/vim-fugitive",
 
     -- formatting
@@ -63,7 +63,6 @@ require("lazy").setup({
     {
       "nvim-treesitter/nvim-treesitter",
       build = ":TSUpdate"
-
     },
     {
       "VonHeikemen/lsp-zero.nvim",
