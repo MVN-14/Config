@@ -1,14 +1,7 @@
---[[local lualine = require "lualine"
-
-lualine.setup({
-  options = {
-    theme = "papercolor_dark"
-  },
-  sections = {
-    lualine_x = { 'filetype' }
-  }
-})]]
-
+return {
+	"nvim-lualine/lualine.nvim",
+	config = function()
+		
 local colors = {
   blue   = '#80a0ff',
   cyan   = '#79dac8',
@@ -64,4 +57,6 @@ require('lualine').setup {
   },
   tabline = {},
   extensions = {},
+}
+	end
 }

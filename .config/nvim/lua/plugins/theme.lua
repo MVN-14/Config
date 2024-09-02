@@ -1,4 +1,14 @@
-require("tokyonight").setup({
+return {
+	{
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require"colorizer".setup()
+		end
+	},
+	{
+	"folke/tokyonight.nvim",
+	config = function()
+		require("tokyonight").setup({
   style = 'night',
   transparent = true,
   styles = {
@@ -16,6 +26,10 @@ vim.cmd.colorscheme("tokyonight")
 vim.api.nvim_set_hl(0, "TroubleNormal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
+	end
+}
+}
+
 
 --  bg_dark = "#1f2335",
 --  bg = "#24283b",
@@ -52,3 +66,4 @@ vim.api.nvim_set_hl(0, "NvimTreeNormalNC", { bg = "none" })
 --    change = "#536c9e",
 --    delete = "#b2555b",
 --  },
+

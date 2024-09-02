@@ -1,10 +1,15 @@
-require("nvim-tree").setup({})
+return {
+	"nvim-tree/nvim-tree.lua",
+	config = function()
+		require("nvim-tree").setup({})
 
 local api = require "nvim-tree.api"
 
 vim.keymap.set("n", "<leader>e", api.tree.toggle, { desc = "Toggle [E]xplorer" })
 vim.keymap.set("n", "<leader>fe", api.tree.focus, { desc = "[F]ocus [E]xplorer" })
 vim.keymap.set("n", "<leader>ff", api.tree.find_file, { desc = "[F]ocus [F]ile in Explorer" })
+end
+}
 
 --[[
 `<C-]>`           CD                         |nvim-tree-api.tree.change_root_to_node()|
