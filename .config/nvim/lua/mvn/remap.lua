@@ -3,6 +3,10 @@ vim.keymap.set("n", "<Tab>", "<C-6>", { desc = "Alternate File" })
 
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "[N]o [H]ighlight" })
 
+vim.keymap.set("n", "<leader>sm", ":messages<CR>", { desc = "[S]how [M]essages" })
+
+vim.keymap.set("n", "<leader>cm", ":messages clear<CR>", { desc = "[C]lear [M]essages" })
+
 -- moving text vertically
 vim.keymap.set("n", "<S-Up>", ':m -2<CR>v=', { desc = "Move line up" })
 vim.keymap.set("n", "<S-Down>", ':m +1<CR>v=', { desc = "Move line down" })

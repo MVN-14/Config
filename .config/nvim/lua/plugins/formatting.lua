@@ -1,4 +1,4 @@
 return {
-	"tpope/vim-endwise",
-	"rstarcruz/vim-closer",
+  "tpope/vim-endwise",
+  "rstacruz/vim-closer",
 }
