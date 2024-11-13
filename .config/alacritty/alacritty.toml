@@ -1,4 +1,4 @@
-import = ["~/.config/allacritty/tokyonight_night.toml"]
+general.import = ["~/.config/allacritty/tokyonight_night.toml"]
 
 [font.normal]
 family = "HackNerdFont"
